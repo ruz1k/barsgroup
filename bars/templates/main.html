@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'main/main.css' %}">
+{% block style %}{% endblock %}
+
+{% block content %}
+<div class="main block">
+    <div class="container-fluid">
+        <div class="row text-center justify-content-center">
+            <div class="col-xs-12 col-lg-6 col-md-6">
+                <a href="{% url 'task' %}">Для Рекуртер</a>
+            </div>
+            <div class="col-xs-12 col-lg-6 col-md-6">
+                <a href="{% url 'sith_form' %}">Для Ситха</a>
+            </div>
+            <div class="col-xs-12 col-lg-6 col-md-6">
+                <a href="{% url 'recurt_info' %}">Список Рекуртеров</a>
+            </div>
+            <div class="col-xs-12 col-lg-6 col-md-6">
+                <a href="{% url 'shadowhand_info' %}">Список Попавших Рукой Тени</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

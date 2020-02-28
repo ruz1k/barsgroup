@@ -1,0 +1,30 @@
+<!-- RECURT INFORMATION !-->
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Список рекуртеров {% endblock %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% block styles %}{% endblock %}
+
+{% block content %}
+<div class="recurt block">
+    <div class="container-fluid">
+        <div class="row text-center justify-content-center">
+            <div class="col-xs-12">
+                <h1>Список рекуртеров</h1>
+                {% for recurt in recurt %}
+                <p>Имя: {{ recurt.name }}</p>
+                <p>Возраст: {{ recurt.age }} Лет</p>
+                <p>Почта: {{ recurt.email }}</p>
+                <p>Планета: {{ recurt.planet }}</p>
+                <p>Ответы:{{ recurt.question1 }} {{ recurt.question2 }} {{ recurt.question3 }}</p>
+                <hr>
+                {% endfor %}
+                <a href="{% url 'shadowhand_form' %}" class="btn btn-secondary" role="button" aria-pressed="false"  autocomplete="off">Добавить к себе с помощью Рукой Тени</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

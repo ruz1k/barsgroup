@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="task block">
+        <div class="container-fluid">
+                <div class="row text-center justify-content-center">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <h1>Задания</h1>
+                            {% for task in task %}
+                            <h1>{{task.title }}</h1>
+                            <p>1){{ task.answer }}</p>
+                            <p>2){{ task.answer1 }}</p>
+                            <p>3){{ task.answer2 }}</p>
+                            {% endfor %}
+                            <hr>
+                            <a href="{% url 'recurt_form' %}" class="btn btn-secondary" role="button" aria-pressed="false"  autocomplete="off">Перейти к заполнению формы и ответов</a>
+                        </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

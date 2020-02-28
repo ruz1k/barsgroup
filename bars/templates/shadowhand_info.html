@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="shadowhand block">
+        <div class="container-fluid">
+                <div class="row text-center justify-content-center">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <h1>Попавшие Рукой Тени</h1>
+                            {% for shadowhand in shadowhand %}
+                            <p>{{ shadowhand.name }}</p>
+                            <p>{{ shadowhand.email }}</p>
+                            <hr>
+                            {% endfor %}
+                            <a href="{% url 'shadowhand_form' %}" class="top-menu" style="text-decoration: underline;">Добавить нового Рекуртера прошедшего Рукой Тени<span class="glyphicon glyphicon-plus"></span></a>
+                        </div>
+                </div>
+        </div>
+</div>
+{% endblock %}
